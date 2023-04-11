@@ -25,8 +25,15 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::middleware('admin')->group(function () {
     Route::prefix('admin')->group(function () {
         Route::get('/', [AdminController::class, 'index'])->name('admin');
+        
         Route::get('/employee', [EmployeeController::class, 'index'])->name('admin.employee');
+        Route::get('/employee/create', [EmployeeController::class, 'create'])->name('admin.employee.create');
+        Route::post('/employee/create', [EmployeeController::class, 'store'])->name('admin.employee.store');
+        Route::get('/employee/edit/{employee}', [EmployeeController::class, 'edit'])->name('admin.employee.edit');
+        Route::put('/employee/edit/{employee}', [EmployeeController::class, 'update'])->name('admin.employee.update');
+        Route::delete('/employee/{employee}', [EmployeeController::class, 'destroy'])->name('admin.employee.delete');
         Route::get('/ajax/employee-datatable', [EmployeeController::class, 'datatable'])->name('admin.employee.datatable');
+        
         Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
     });
 });

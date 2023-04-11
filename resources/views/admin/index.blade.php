@@ -25,7 +25,8 @@
   <link href="{{ asset('assets/admin/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/admin/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/admin/vendor/simple-datatables/style.css') }}" rel="stylesheet">
-
+  <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet"/>
+  
   <!-- Template Main CSS File -->
   <link href="{{ asset('assets/admin/css/style.css') }}" rel="stylesheet">
 </head>
@@ -55,10 +56,12 @@
   <script src="{{ asset('assets/admin/vendor/simple-datatables/simple-datatables.js') }}"></script>
   <script src="{{ asset('assets/admin/vendor/tinymce/tinymce.min.js') }}"></script>
   <script src="{{ asset('assets/admin/vendor/php-email-form/validate.js') }}"></script>
-
-<!-- Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
 
   @stack('js')
+
+<!-- Bootstrap -->
 
   <!-- Template Main JS File -->
   <script src="{{ asset('assets/admin/js/main.js') }}"></script>

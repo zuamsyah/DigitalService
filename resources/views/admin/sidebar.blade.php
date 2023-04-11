@@ -11,7 +11,7 @@
         </li><!-- End Dashboard Nav -->
 
         <li class="nav-item">
-            <a class="nav-link {{ request()->is('admin/employee') ? '' : 'collapsed' }}" href="{{ route('admin.employee') }}">
+            <a class="nav-link {{ request()->is('admin/employee*') ? '' : 'collapsed' }}" href="{{ route('admin.employee') }}">
                 <i class="bi bi-person"></i>
                 <span>Employee</span>
             </a>
