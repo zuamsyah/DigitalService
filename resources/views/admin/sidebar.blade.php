@@ -17,6 +17,13 @@
             </a>
         </li><!-- End Profile Page Nav -->
 
+        <li class="nav-item">
+            <a class="nav-link {{ request()->is('admin/testimonial*') ? '' : 'collapsed' }}" href="{{ route('admin.testimonial') }}">
+                <i class="bi bi-chat-dots"></i>
+                <span>Testimonial</span>
+            </a>
+        </li>
+
     </ul>
 
 </aside><!-- End Sidebar-->

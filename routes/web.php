@@ -5,6 +5,8 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\TestimonialController;
+use App\Models\Testimonial;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +35,15 @@ Route::middleware('admin')->group(function () {
         Route::put('/employee/edit/{employee}', [EmployeeController::class, 'update'])->name('admin.employee.update');
         Route::delete('/employee/{employee}', [EmployeeController::class, 'destroy'])->name('admin.employee.delete');
         Route::get('/ajax/employee-datatable', [EmployeeController::class, 'datatable'])->name('admin.employee.datatable');
-        
+
+        Route::get('/testimonial', [TestimonialController::class, 'index'])->name('admin.testimonial');
+        Route::get('/ajax/testimonial-datatable', [TestimonialController::class, 'datatable'])->name('admin.testimonial.datatable');
+        Route::get('/testimonial/create', [TestimonialController::class, 'create'])->name('admin.testimonial.create');
+        Route::post('/testimonial/create', [TestimonialController::class, 'store'])->name('admin.testimonial.store');
+        Route::get('/testimonial/edit/{testimonial}', [TestimonialController::class, 'edit'])->name('admin.testimonial.edit');
+        Route::put('/testimonial/edit/{testimonial}', [TestimonialController::class, 'update'])->name('admin.testimonial.update');
+        Route::delete('/testimonial/{testimonial}', [TestimonialController::class, 'destroy'])->name('admin.testimonial.delete');
+
         Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
     });
 });

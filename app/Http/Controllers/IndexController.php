@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use App\Models\Index;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -16,7 +17,8 @@ class IndexController extends Controller
     public function index()
     {
         $employees = Employee::all();
-        return view('index', compact('employees'));
+        $testimonials = Testimonial::all();
+        return view('index', compact('employees', 'testimonials'));
     }
 
     /**
